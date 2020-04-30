@@ -11,4 +11,5 @@ class Task extends Model
     use SoftDeletes;
     
     protected $table = 'tasks';
+    protected $fillable = ['title', 'description', 'assigned_by', 'assigned_to', 'when', 'duration', 'done'];
 }

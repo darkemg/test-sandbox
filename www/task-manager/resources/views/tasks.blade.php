@@ -111,5 +111,7 @@
     		let baseUrl = '{{ url('/') }}' ;
     	</script>
     	<script src="{{ URL::asset('assets/js/index.js') }}"></script>
+    	<script id="" type="">
+        </script>
 	</body>
 </html>

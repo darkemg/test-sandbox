@@ -25,15 +25,10 @@ class TaskController extends Controller
     
     public function create(CreateTask $request)
     {
-        //$request->validate();
         $task = new Task();
-        $task->title = $request->input('title');
-        $task->description = $request->input('description');
-        $task->assigned_to = $request->input('assigned_to');
-        $task->assigned_by = $request->input('assigned_by');
-        $task->when = Carbon::createFromFormat('m/d/Y H:i', $request->input('when'));
-        $task->duration = $request->input('duration');
+        $task->fill($request->all());
         $task->done = false;
+        $task->when = Carbon::createFromFormat('m/d/Y H:i', $request->input('when'));
         $task->save();
         return response($task, 201);
     }
